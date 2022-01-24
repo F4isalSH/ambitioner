@@ -17,7 +17,7 @@ export const Register: React.FC = () => {
         <Flex h='100vh' direction={{base: 'column', md: 'column', lg:'row'}}>
         <Sidebanner/>
         <Flex alignItems='center' justifyContent='center' w='full' height='full'>
-            <VStack alignItems='flex-start' spacing={3}>
+            <VStack py={5} alignItems='flex-start' spacing={3}>
                 <Heading>Get Started</Heading>
                 <Text color='gray.500'>Already have an account? <Button variant='link' color='#FFB0A5'>Log In</Button></Text>
                 <form onSubmit={handleSubmit}>
