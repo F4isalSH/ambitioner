@@ -2,8 +2,11 @@ import { Flex,VStack, Text,Heading,SimpleGrid,GridItem } from "@chakra-ui/layout
 import {useState} from 'react'
 import { Button,FormControl,FormLabel,Input } from "@chakra-ui/react"
 import { Sidebanner } from "../../components/Sidebanner"
+import { useNavigate } from "react-router"
+
 export const Login: React.FC = () => {
 
+    const navigate = useNavigate();
     const [email,setEmail] = useState<string>('')
     const [password,setPassword] = useState<string>('')
 
@@ -18,7 +21,7 @@ export const Login: React.FC = () => {
         <Flex alignItems='center' justifyContent='center' w='full' height='full'>
             <VStack py={5} alignItems='flex-start' spacing={3}>
                 <Heading>Welcome</Heading>
-                <Text color='gray.500'>Don't have an account? <Button variant='link' color='#EB615A'>Register</Button></Text>
+                <Text color='gray.500'>Don't have an account? <Button onClick={()=>navigate('/register')} variant='link' color='#EB615A'>Register</Button></Text>
                 <form onSubmit={handleSubmit}>
                 <SimpleGrid w='full' spacing={5}>
                 <GridItem colSpan={1}>
