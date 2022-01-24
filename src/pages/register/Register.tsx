@@ -1,6 +1,6 @@
 
 
-export const Signup: React.FC = () => {
+export const Register: React.FC = () => {
     return (
         <div>
         
