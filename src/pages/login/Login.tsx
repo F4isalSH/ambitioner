@@ -15,7 +15,7 @@ export const Login: React.FC = () => {
     return (
         <Flex h='100vh' direction={{base: 'column', md: 'column', lg:'row'}}>
         <Sidebanner/>
-        <Container w='full' height='full'>
+        <Container centerContent w='full' height='full'>
             <VStack p={{base:19,md:25, lg:40}} alignItems='flex-start' spacing={3}>
                 <Heading>Welcome</Heading>
                 <Text color='gray.500'>Don't have an account? <Button variant='link' color='#FFB0A5'>Register</Button></Text>
