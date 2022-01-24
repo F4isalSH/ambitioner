@@ -2,7 +2,7 @@ import { VStack, Image,Flex} from "@chakra-ui/react"
 
 export const Sidebanner: React.FC = () => {
     return (
-        <Flex bg='#FFB0A5' alignItems='center' justifyContent='center' w='full' h='full' p={10}>
+        <Flex bg='#FFB0A5' alignItems='center' justifyContent='center' w='full' h='full' py={10}>
         <VStack 
         alignItems='flex-start'
         >
