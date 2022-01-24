@@ -3,10 +3,10 @@ import { Button,FormControl,FormLabel,Input } from "@chakra-ui/react"
 import { Sidebanner } from "../../components/Sidebanner"
 export const Register: React.FC = () => {
     return (
-        <Flex h='100vh'>
+        <Flex h='100vh' direction={{base: 'column', md: 'row'}}>
         <Sidebanner/>
         <Container w='full' height='full'>
-            <VStack p={40} alignItems='flex-start' spacing={3}>
+            <VStack p={{base:20,md:40}} alignItems='flex-start' spacing={3}>
                 <Heading>Get Started</Heading>
                 <Text color='gray.500'>Already have an account? <Button variant='link' color='#FFB0A5'>Log In</Button></Text>
                 <SimpleGrid w='full' spacing={5}>
