@@ -1,5 +1,5 @@
 
-export const Dashboard: React.FC = () => {
+export const Home: React.FC = () => {
     return (
         <div>
         
