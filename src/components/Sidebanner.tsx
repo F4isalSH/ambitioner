@@ -1,4 +1,4 @@
-import { VStack, Image,Container } from "@chakra-ui/react"
+import { VStack, Image} from "@chakra-ui/react"
 
 export const Sidebanner: React.FC = () => {
     return (
