@@ -19,7 +19,7 @@ export const Register: React.FC = () => {
         <Flex alignItems='center' justifyContent='center' w='full' height='full'>
             <VStack py={5} alignItems='flex-start' spacing={3}>
                 <Heading>Get Started</Heading>
-                <Text color='gray.500'>Already have an account? <Button variant='link' color='#FFB0A5'>Log In</Button></Text>
+                <Text color='gray.500'>Already have an account? <Button variant='link' color='#EB615A'>Log In</Button></Text>
                 <form onSubmit={handleSubmit}>
                 <SimpleGrid w='full' spacing={5}>
                 <GridItem colSpan={1}>
@@ -56,7 +56,7 @@ export const Register: React.FC = () => {
                  </GridItem>
 
                  <GridItem  colSpan={1}>
-                 <Button type='submit' bg='#FFB0A5' color='white' size="lg" w="full">Register</Button>
+                 <Button type='submit' bg='#EB615A' _hover={{bg:'#FFB0A5'}} color='white' size="lg" w="full">Register</Button>
                  </GridItem>
                  </SimpleGrid>
                 </form>
