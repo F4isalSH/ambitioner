@@ -1,4 +1,4 @@
-import { VStack, Image } from "@chakra-ui/react"
+import { VStack, Image,Container } from "@chakra-ui/react"
 
 export const Sidebanner: React.FC = () => {
     return (
@@ -6,12 +6,12 @@ export const Sidebanner: React.FC = () => {
         w='full'
         h='full'
         bg='#FFB0A5'
-        p={10}
-        spacing={10}
+        p={20}
         alignItems='flex-start'
         >
             <Image src='logo.svg'  />
-            <Image boxSize={500} src='illustration.svg' />
+            <Image boxSize={600} src='illustration.svg' />
+            <Image src='landingMessage.svg' />
         
         </VStack>
     )

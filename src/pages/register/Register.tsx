@@ -10,6 +10,7 @@ export const Register: React.FC = () => {
         bg='white'
         >
             
+            
         </VStack>
         </Flex>
     )
