@@ -14,14 +14,14 @@ export const Register: React.FC = () => {
                 <GridItem colSpan={1}>
                   <FormControl>
                   <FormLabel>Email Address</FormLabel>
-                  <Input placeholder="John"/>
+                  <Input placeholder="email@gmail.com"/>
                   </FormControl>
                  </GridItem>
 
                  <GridItem colSpan={1}>
                   <FormControl>
                   <FormLabel>Password</FormLabel>
-                  <Input placeholder="John"/>
+                  <Input placeholder='password'/>
                   </FormControl>
                  </GridItem>
 
