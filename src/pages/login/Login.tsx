@@ -1,4 +1,4 @@
-import { Flex,Box,VStack, Text,Heading,SimpleGrid,GridItem } from "@chakra-ui/layout"
+import { Flex,VStack, Text,Heading,SimpleGrid,GridItem } from "@chakra-ui/layout"
 import {useState} from 'react'
 import { Button,FormControl,FormLabel,Input } from "@chakra-ui/react"
 import { Sidebanner } from "../../components/Sidebanner"
