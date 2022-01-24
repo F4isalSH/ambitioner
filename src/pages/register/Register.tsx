@@ -4,8 +4,12 @@ export const Register: React.FC = () => {
     return (
         <Flex h='100vh'>
         <Sidebanner/>
-        <VStack>
-            asdf
+        <VStack 
+        w='full'
+        h='full'
+        bg='white'
+        >
+            
         </VStack>
         </Flex>
     )
