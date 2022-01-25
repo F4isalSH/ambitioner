@@ -1,4 +1,4 @@
-import { Flex,VStack, Text,Heading,SimpleGrid,GridItem } from "@chakra-ui/layout"
+import { Flex,VStack, Text,Heading,SimpleGrid,GridItem, Center} from "@chakra-ui/layout"
 import {useState} from 'react'
 import { Button,FormControl,FormLabel,Input } from "@chakra-ui/react"
 import { Sidebanner } from "../../components/Sidebanner"
@@ -18,7 +18,7 @@ export const Login: React.FC = () => {
     return (
         <Flex h='100vh' direction={{base: 'column', md: 'column', lg:'row'}}>
         <Sidebanner/>
-        <Flex alignItems='center' justifyContent='center' w='full' height='full'>
+        <Center>
             <VStack py={5} alignItems='flex-start' spacing={3}>
                 <Heading>Welcome</Heading>
                 <Text color='gray.500'>Don't have an account? <Button onClick={()=>navigate('/register')} variant='link' color='#EB615A'>Register</Button></Text>
@@ -53,7 +53,7 @@ export const Login: React.FC = () => {
                 </form>
                     
             </VStack>
-        </Flex>
+        </Center>
         </Flex>
     )
 }
