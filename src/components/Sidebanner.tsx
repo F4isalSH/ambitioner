@@ -7,7 +7,7 @@ export const Sidebanner: React.FC = () => {
         alignItems='flex-start'
         >
             <Image src='logo.svg'  />
-            <Image boxSize={{base:300, md:600}} src='illustration.svg' />
+            <Image boxSize={{base:300, md:450}} src='illustration.svg' />
             <Image src='landingMessage.svg' />
         
         </VStack>
