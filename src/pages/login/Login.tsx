@@ -18,7 +18,7 @@ export const Login: React.FC = () => {
     return (
         <Flex h='100vh' direction={{base: 'column', md: 'column', lg:'row'}}>
         <Sidebanner/>
-        <Center>
+        <Center  w='full' height='full'>
             <VStack py={5} alignItems='flex-start' spacing={3}>
                 <Heading>Welcome</Heading>
                 <Text color='gray.500'>Don't have an account? <Button onClick={()=>navigate('/register')} variant='link' color='#EB615A'>Register</Button></Text>
