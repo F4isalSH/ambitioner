@@ -63,7 +63,7 @@ export const Register: React.FC = () => {
                  </GridItem>
 
                  <GridItem  colSpan={1}>
-                 <Button type='submit' bg='#EB615A' _hover={{bg:'#FFB0A5'}} color='white' size="lg" w="full">Register</Button>
+                 <Button isLoading={isPending? true : false} type='submit' bg='#EB615A' _hover={{bg:'#FFB0A5'}} color='white' size="lg" w="full">Register</Button>
                  </GridItem>
                  </SimpleGrid>
                 </form>
