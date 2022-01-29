@@ -3,11 +3,16 @@ import {useState} from 'react'
 import { Button,FormControl,FormLabel,Input } from "@chakra-ui/react"
 import { Sidebanner } from "../../components/Sidebanner"
 import { useNavigate } from "react-router"
+import { useSignup } from "../../hooks/useSignup"
+
 export const Register: React.FC = () => {
     const navigate = useNavigate();
     const [email,setEmail] = useState<string>('')
     const [password,setPassword] = useState<string>('')
     const [displayName,setDisplayName] = useState<string>('')
+    const {error, isPending, signup} = useSignup()
+
+
 
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>):void =>{
         e.preventDefault()
