@@ -16,6 +16,7 @@ export const Register: React.FC = () => {
 
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>):void =>{
         e.preventDefault()
+        signup({email, password, displayName})
     }
 
 
