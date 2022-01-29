@@ -67,7 +67,7 @@ export const Register: React.FC = () => {
                  </GridItem>
                  </SimpleGrid>
                 </form>
-                    
+                {error && <p>{error}</p>}
             </VStack>
         </Center>
         </Flex>
