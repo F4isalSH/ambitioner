@@ -1,7 +1,8 @@
 import React, { createContext, useReducer } from 'react';
 import firebase from 'firebase/app'
  type Actions =
- | {type: 'LOGIN'; payload: firebase.User };
+ | {type: 'LOGIN'; payload: firebase.User }
+ | {type: 'LOGOUT'};
 
 
 
@@ -12,6 +13,8 @@ export const authReducer = (state:any, action: Actions)=>{
     switch (action.type){
         case 'LOGIN':
             return {...state, user: action.payload}
+        case 'LOGOUT':
+            return {...state,user:null}
         default:
             return state
     }
