@@ -27,7 +27,7 @@ export const Login: React.FC = () => {
 
   useEffect(() => {
     if (error) {
-      toast.error(error);
+      toast.error("You have entered an invalid username or password");
     }
   }, error);
 
