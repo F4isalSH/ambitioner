@@ -1,4 +1,4 @@
-import { VStack, HStack } from "@chakra-ui/layout";
+import { VStack } from "@chakra-ui/layout";
 
 export const TransactionInput: React.FC = () => {
   return (
