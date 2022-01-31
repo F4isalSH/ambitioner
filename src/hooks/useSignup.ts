@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { projectAuth } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
@@ -9,6 +9,7 @@ interface signUpCredentials {
 }
 
 export const useSignup = () => {
+  const [isCancelled, setIsCancelled] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
   const [isPending, setIsPending] = useState<boolean>(false);
   const { dispatch }: any = useAuthContext();
@@ -31,14 +32,22 @@ export const useSignup = () => {
 
       dispatch({ type: "LOGIN", payload: res.user });
 
-      setIsPending(false);
-      setError(null);
+      if (!isCancelled) {
+        setIsPending(false);
+        setError(null);
+      }
     } catch (err: any) {
-      console.log(err.message);
-      setError(err.message);
-      setIsPending(false);
+      if (!isCancelled) {
+        console.log(err.message);
+        setError(err.message);
+        setIsPending(false);
+      }
     }
   };
+
+  useEffect(() => {
+    return () => setIsCancelled(true);
+  }, []);
 
   return { error, isPending, signup };
 };
