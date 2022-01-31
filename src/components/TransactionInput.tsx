@@ -32,6 +32,7 @@ export const TransactionInput: React.FC = () => {
       h="100vh"
       bg="#FFB0A5"
       pb={10}
+      boxShadow="base"
     >
       <VStack spacing={10}>
         <Heading color="white">Add a Transaction</Heading>
