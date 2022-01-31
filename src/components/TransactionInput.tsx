@@ -54,9 +54,9 @@ export const TransactionInput: React.FC = () => {
             <GridItem colSpan={1}>
               <FormControl isRequired>
                 <NumberInput
-                  defaultValue={0}
+                  defaultValue={0.1}
                   step={0.1}
-                  min={0}
+                  min={0.1}
                   bg="white"
                   borderRadius="md"
                   onChange={(valueString) =>
