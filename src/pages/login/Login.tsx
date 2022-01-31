@@ -7,11 +7,12 @@ import {
   GridItem,
   Center,
 } from "@chakra-ui/layout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { Sidebanner } from "../../components/Sidebanner";
 import { useNavigate } from "react-router";
 import { useLogin } from "../../hooks/useLogin";
+import { toast } from "react-hot-toast";
 
 export const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -23,6 +24,12 @@ export const Login: React.FC = () => {
     e.preventDefault();
     login(email, password);
   };
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, error);
 
   return (
     <Flex h="100vh" direction={{ base: "column", md: "column", lg: "row" }}>
@@ -76,7 +83,6 @@ export const Login: React.FC = () => {
                 >
                   Login
                 </Button>
-                {error && <p>{error}</p>}
               </GridItem>
             </SimpleGrid>
           </form>
