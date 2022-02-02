@@ -14,16 +14,19 @@ import {
   NumberDecrementStepper,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { useFirestore } from "../hooks/useFirestore";
 
 export const TransactionInput: React.FC = () => {
   const [transactionName, setTransactionName] = useState<string>();
   const [amount, setAmount] = useState<number>();
+  const { addDocument, response } = useFirestore("transactions");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log(transactionName, amount);
-    setTransactionName("");
-    setAmount(0);
+    addDocument({
+      transactionName,
+      amount,
+    });
   };
 
   return (
