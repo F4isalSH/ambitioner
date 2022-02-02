@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { useFirestore } from "../hooks/useFirestore";
-import { toast } from "react-hot-toast";
 
 interface TransactionInputProps {
   uid: string;
@@ -37,7 +36,6 @@ export const TransactionInput: React.FC<TransactionInputProps> = ({ uid }) => {
 
   useEffect(() => {
     if (response.success) {
-      toast.success("Added Transaction!");
       setTransactionName("");
       setAmount(0.1);
     }
