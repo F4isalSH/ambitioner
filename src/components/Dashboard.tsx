@@ -23,7 +23,7 @@ export const Dashboard: React.FC = ({}) => {
         <Heading fontFamily="mono" size="md">
           Transactions
         </Heading>
-        <TransactionList uid={user.id} />
+        <TransactionList uid={user.uid} />
         <Icon boxSize={6} as={FaMoneyBillWave} color="#EB615A" />
       </HStack>
     </VStack>
