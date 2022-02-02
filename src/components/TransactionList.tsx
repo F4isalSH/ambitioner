@@ -1,5 +1,4 @@
-import firebase from "firebase/app";
-import { SimpleGrid, GridItem } from "@chakra-ui/react";
+import { SimpleGrid, GridItem, Text } from "@chakra-ui/react";
 import { useCollection } from "../hooks/useCollection";
 interface TransactionListProps {
   uid: string;
@@ -7,11 +6,21 @@ interface TransactionListProps {
 
 export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
   const { documents: transactions }: any = useCollection("transactions");
+  const userTransactions = transactions.where("uid", "==", uid);
 
   return (
     <SimpleGrid columns={3}>
-      {transactions.map((transaction: any) => (
-        <GridItem></GridItem>
+      {userTransactions.map((transaction: any) => (
+        <GridItem
+          borderLeftColor="#EC615B"
+          borderRadius="lg"
+          boxShadow="base"
+          colSpan={1}
+          justifyContent="space-between"
+        >
+          <Text>{transaction.transactionName}</Text>
+          <Text>{transaction.amount}</Text>
+        </GridItem>
       ))}
     </SimpleGrid>
   );
