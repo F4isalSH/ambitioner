@@ -29,15 +29,15 @@ export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
               borderRadius="lg"
               boxShadow="base"
               colSpan={1}
-              p={2}
+              p={3}
             >
-              <HStack justifyContent="space-between">
+              <HStack justifyContent="space-between" spacing={7}>
                 <Text>{transaction.transactionName}</Text>
-                <HStack>
+                <HStack p={0}>
                   <Text>${transaction.amount}</Text>
                   <IconButton
                     aria-label="Delete Transaction"
-                    variant="outline"
+                    variant="link"
                     icon={<DeleteIcon />}
                     onClick={() => deleteDocument(transaction.id)}
                   />
