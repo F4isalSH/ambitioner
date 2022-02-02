@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useFirestore } from "../hooks/useFirestore";
-import firebase from "firebase/app";
 
 interface TransactionInputProps {
   uid: string;

@@ -6,7 +6,7 @@ type Actions =
   | { type: "LOGOUT" }
   | { type: "AUTH_IS_READY"; payload: firebase.User | null };
 
-export const AuthContext = createContext<firebase.User | null>(null);
+export const AuthContext = createContext(null);
 
 export const authReducer = (state: any, action: Actions) => {
   switch (action.type) {
