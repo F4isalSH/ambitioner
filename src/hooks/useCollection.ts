@@ -1,33 +1,44 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { projectFirestore } from "../firebase/config";
+// @ts-ignore
 
-export const useCollection = (collection: any) => {
+export const useCollection = (collection, _query) => {
   const [documents, setDocuments] = useState(null);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState(null);
+
+  const query = useRef(_query).current;
 
   useEffect(() => {
     let ref = projectFirestore.collection(collection);
 
+    if (query) {
+      // @ts-ignore
+
+      ref = ref.where(...query);
+    }
+
     const unsubscribe = ref.onSnapshot(
       (snapshot) => {
-        let results: any = [];
+        // @ts-ignore
+        let results = [];
         snapshot.docs.forEach((doc) => {
+          console.log(doc);
           results.push({ ...doc.data(), id: doc.id });
         });
+        // @ts-ignore
 
-        //updating the state
         setDocuments(results);
         setError(null);
       },
-      (error: any) => {
+      (error) => {
         console.log(error);
-        setError("Could not fetch data");
+        // @ts-ignore
+        setError("could not fetch the data");
       }
     );
 
-    //unsubscribe
     return () => unsubscribe();
-  }, [collection]);
+  }, [collection, query]);
 
   return { documents, error };
 };
