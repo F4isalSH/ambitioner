@@ -18,10 +18,10 @@ import { useFirestore } from "../hooks/useFirestore";
 import firebase from "firebase/app";
 
 interface TransactionInputProps {
-  user: firebase.User;
+  uid: string;
 }
 
-export const TransactionInput: React.FC<TransactionInputProps> = ({ user }) => {
+export const TransactionInput: React.FC<TransactionInputProps> = ({ uid }) => {
   const [transactionName, setTransactionName] = useState<string>();
   const [amount, setAmount] = useState<number>();
   const { addDocument, response } = useFirestore("transactions");
@@ -31,6 +31,7 @@ export const TransactionInput: React.FC<TransactionInputProps> = ({ user }) => {
     addDocument({
       transactionName,
       amount,
+      uid,
     });
   };
 
