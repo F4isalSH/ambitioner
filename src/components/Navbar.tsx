@@ -1,10 +1,9 @@
-import { CgDarkMode } from "react-icons/cg";
-import { HStack, Image, Button, Icon, useColorMode } from "@chakra-ui/react";
+import { HStack, Image, Button } from "@chakra-ui/react";
 import { useLogout } from "../hooks/useLogout";
 export const Navbar: React.FC = () => {
   const { logout } = useLogout();
   return (
-    <HStack w="full" py="10" px="20" justifyContent="space-between">
+    <HStack w="full" justifyContent="space-between" px={10}>
       <Image src="logo.svg" boxSize={{ base: 150 }} />
       <Button
         bg="#EB615A"

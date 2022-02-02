@@ -7,13 +7,7 @@ import { TransactionList } from "./TransactionList";
 export const Dashboard: React.FC = ({}) => {
   const { user }: any = useAuthContext();
   return (
-    <VStack
-      spacing={10}
-      bg="#F3F8FB"
-      alignItems="flex-start"
-      w="full"
-      h="100vh"
-    >
+    <VStack spacing={10} bg="#F3F8FB" alignItems="flex-start" w="full" h="full">
       <Navbar />
 
       <Center w="full" flexDirection="column">

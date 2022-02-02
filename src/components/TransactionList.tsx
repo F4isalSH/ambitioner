@@ -18,8 +18,8 @@ export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
   const { deleteDocument } = useFirestore("transactions");
 
   return (
-    <Center w="full">
-      <SimpleGrid columns={3} spacing={10}>
+    <Center w="full" h="full">
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={10} pb={10}>
         {documents &&
           documents.map((transaction: any) => (
             <GridItem

@@ -44,12 +44,12 @@ export const TransactionInput: React.FC<TransactionInputProps> = ({ uid }) => {
   return (
     <Center
       w={{ base: "full", md: "full", lg: "50%" }}
-      h="100vh"
+      h="full"
       bg="#FFB0A5"
-      pb={10}
+      py={10}
       boxShadow="base"
     >
-      <VStack spacing={10}>
+      <VStack spacing={10} w="full">
         <Heading color="white">Add a Transaction</Heading>
         <form onSubmit={handleSubmit}>
           <SimpleGrid w="full" spacing={10}>
