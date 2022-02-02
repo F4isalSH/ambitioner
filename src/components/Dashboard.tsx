@@ -2,6 +2,7 @@ import { Navbar } from "./Navbar";
 import { VStack, Heading, HStack, Icon } from "@chakra-ui/react";
 import { useAuthContext } from "../hooks/useAuthContext";
 import { FaMoneyBillWave } from "react-icons/fa";
+import { TransactionList } from "./TransactionList";
 
 export const Dashboard: React.FC = ({}) => {
   const { user }: any = useAuthContext();
@@ -22,6 +23,7 @@ export const Dashboard: React.FC = ({}) => {
         <Heading fontFamily="mono" size="md">
           Transactions
         </Heading>
+        <TransactionList uid={user.id} />
         <Icon boxSize={6} as={FaMoneyBillWave} color="#EB615A" />
       </HStack>
     </VStack>
