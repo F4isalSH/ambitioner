@@ -15,8 +15,13 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useFirestore } from "../hooks/useFirestore";
+import firebase from "firebase/app";
 
-export const TransactionInput: React.FC = () => {
+interface TransactionInputProps {
+  user: firebase.User;
+}
+
+export const TransactionInput: React.FC<TransactionInputProps> = ({ user }) => {
   const [transactionName, setTransactionName] = useState<string>();
   const [amount, setAmount] = useState<number>();
   const { addDocument, response } = useFirestore("transactions");
