@@ -1,12 +1,21 @@
-import { SimpleGrid, GridItem, Text, Center, HStack } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  GridItem,
+  Text,
+  Center,
+  HStack,
+  IconButton,
+} from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
 import { useCollection } from "../hooks/useCollection";
-import { toast } from "react-hot-toast";
+import { useFirestore } from "../hooks/useFirestore";
 interface TransactionListProps {
   uid: string;
 }
 
 export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
   const { documents }: any = useCollection("transactions", ["uid", "==", uid]);
+  const { deleteDocument } = useFirestore("transactions");
 
   return (
     <Center w="full">
@@ -14,7 +23,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
         {documents &&
           documents.map((transaction: any) => (
             <GridItem
-              key={transaction.uid}
+              key={transaction.id}
               borderLeftColor="#EC615B"
               borderLeftWidth={5}
               borderRadius="lg"
@@ -24,7 +33,15 @@ export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
             >
               <HStack justifyContent="space-between">
                 <Text>{transaction.transactionName}</Text>
-                <Text>${transaction.amount}</Text>
+                <HStack>
+                  <Text>${transaction.amount}</Text>
+                  <IconButton
+                    aria-label="Delete Transaction"
+                    variant="outline"
+                    icon={<DeleteIcon />}
+                    onClick={() => deleteDocument(transaction.id)}
+                  />
+                </HStack>
               </HStack>
             </GridItem>
           ))}
