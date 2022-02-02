@@ -13,16 +13,17 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFirestore } from "../hooks/useFirestore";
+import { toast } from "react-hot-toast";
 
 interface TransactionInputProps {
   uid: string;
 }
 
 export const TransactionInput: React.FC<TransactionInputProps> = ({ uid }) => {
-  const [transactionName, setTransactionName] = useState<string>();
-  const [amount, setAmount] = useState<number>();
+  const [transactionName, setTransactionName] = useState<string>("");
+  const [amount, setAmount] = useState<number>(0.1);
   const { addDocument, response } = useFirestore("transactions");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -33,6 +34,14 @@ export const TransactionInput: React.FC<TransactionInputProps> = ({ uid }) => {
       uid,
     });
   };
+
+  useEffect(() => {
+    if (response.success) {
+      toast.success("Added Transaction!");
+      setTransactionName("");
+      setAmount(0.1);
+    }
+  }, [response.success]);
 
   return (
     <Center
