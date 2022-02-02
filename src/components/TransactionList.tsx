@@ -5,23 +5,24 @@ interface TransactionListProps {
 }
 
 export const TransactionList: React.FC<TransactionListProps> = ({ uid }) => {
-  const { documents: transactions }: any = useCollection("transactions");
-  const userTransactions = transactions.where("uid", "==", uid);
+  const { documents }: any = useCollection("transactions", ["uid", "==", uid]);
 
   return (
     <SimpleGrid columns={3}>
-      {userTransactions.map((transaction: any) => (
-        <GridItem
-          borderLeftColor="#EC615B"
-          borderRadius="lg"
-          boxShadow="base"
-          colSpan={1}
-          justifyContent="space-between"
-        >
-          <Text>{transaction.transactionName}</Text>
-          <Text>{transaction.amount}</Text>
-        </GridItem>
-      ))}
+      {documents &&
+        documents.map((transaction: any) => (
+          <GridItem
+            key={transaction.uid}
+            borderLeftColor="#EC615B"
+            borderRadius="lg"
+            boxShadow="base"
+            colSpan={1}
+            justifyContent="space-between"
+          >
+            <Text>{transaction.transactionName}</Text>
+            <Text>{transaction.amount}</Text>
+          </GridItem>
+        ))}
     </SimpleGrid>
   );
 };
