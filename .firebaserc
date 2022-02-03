@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "ambitioner-3d73f"
+    "default": FIREBASE_ID
   }
 }
