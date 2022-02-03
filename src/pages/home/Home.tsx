@@ -5,7 +5,10 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 export const Home: React.FC = () => {
   const { user }: any = useAuthContext();
   return (
-    <Flex h="100vh" direction={{ base: "column", md: "column", lg: "row" }}>
+    <Flex
+      h={{ md: "100vh", lg: "100vh" }}
+      direction={{ base: "column", md: "column", lg: "row" }}
+    >
       <Dashboard />
       <TransactionInput uid={user.uid} />
     </Flex>
