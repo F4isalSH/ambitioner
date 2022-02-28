@@ -1,6 +1,6 @@
 # Track your finances with this simple and easy to use web app, Ambitioner!
 
-## Using React.js, ChakraUI, and Firebase.
+## Using React, Typescript ,ChakraUI, and Firebase.
 
 ## Demo
 
